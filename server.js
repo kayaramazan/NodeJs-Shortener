@@ -21,4 +21,11 @@ app.post('/shortUrl', async (req,res) =>
     })
     res.redirect('/')
 })
+app.get('/:shortid', async (req,res)=>{
+    const url =  ShortUrl.findOne({short:req.params.shortid});
+    if (url == null) return res.statusCode(404)
+    url.clicks++
+    url.save()
+    res.redirect(url.full)
+})
 app.listen(process.env.PORT || 3000)

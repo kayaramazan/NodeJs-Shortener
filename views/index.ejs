@@ -17,8 +17,7 @@
         </form>
     <table class="table table-striped">
         <thead>
-          <tr>
-            <th scope="col">#</th>
+          <tr> 
             <th scope="col">Full Url</th>
             <th scope="col">Short Url</th>
             <th scope="col">Click</th>
@@ -27,11 +26,10 @@
         <tbody>
             <% urls.forEach(url => {
                 >%
-                <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+                <tr> 
+            <td><a href="<%=url.full %>"><%=url.full %></a> </td>
+            <td><a href="<%=url.short %>"><%=url.short %></a> </td>
+            <td><%=url.clicks %></td>
           </tr>
                 <%
             });  %> 
